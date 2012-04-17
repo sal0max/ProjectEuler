@@ -65,7 +65,7 @@ public class Prob017 {
 				return onedigit(i);
 			}
 		} else {
-			switch (Integer.valueOf(String.valueOf(i).substring(0, 1))) {
+			switch (i / 10) {
 			case 1:
 				return onedigit(i % 10) + "teen";
 			case 2:
@@ -93,13 +93,9 @@ public class Prob017 {
 
 	private static String threedigits(int i) {
 		if (i % 100 == 0)
-			return onedigit(Integer.valueOf(String.valueOf(i).substring(0, 1)))
-					+ "hundred";
+			return onedigit(i / 100) + "hundred";
 		else
-			return onedigit(Integer.valueOf(String.valueOf(i).substring(0, 1)))
-					+ "hundredand"
-					+ twodigits(Integer.valueOf(String.valueOf(i).substring(1,
-							3)));
+			return onedigit(i / 100) + "hundredand" + twodigits(i % 100);
 
 	}
 
@@ -118,13 +114,14 @@ public class Prob017 {
 
 	public static void main(String[] args) {
 
-		long length = 0;
+		long length = 0L;
 		for (int i = 1; i < 1000; i++) {
 			System.out.println(numberToWord(i));
 			length += numberToWord(i).length();
 		}
 		length += "onethousand".length();
 
+		System.out.println("onethousand");
 		System.out.println("-> length = " + length);
 	}
 
