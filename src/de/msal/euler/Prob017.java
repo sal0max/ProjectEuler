@@ -125,7 +125,7 @@ public class Prob017 {
 		}
 		length += "onethousand".length();
 
-		System.out.println(length);
+		System.out.println("-> length = " + length);
 	}
 
 }

@@ -25,7 +25,7 @@ public class Prob016 {
 
 		}
 
-		System.out.println("Summe von 2^1000 (" + number.toString() + "):");
+		System.out.println("Sum of 2^1000 (" + number.toString() + "):");
 		System.out.println("  " + sum);
 	}
 
